@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src = "javascript/operacion.js">  </script>
+</head>
+<body>
+      
+   
+   <div class = "calc_contenedor">
+      
+      <div class = "calc_display" > 
+         <input type = "text" id = "calc_estado" class = "in_display" readonly = "readonly">
+         <input type = "text" id = "calc_salida" class = "in_display" readonly = "readonly">  
+         <input type = "text" id = "calc_resul" class="in_display" readonly = "readonly">
+      </div>
+      
+      <div class = "calc_teclado"> 
+
+       <div class = "calc_fila" style="background-color: rgb(3, 52, 73);">
+           <button value = "%" class = "calc_button operador" onclick="salida(value)">%</button>
+           <button value = "√(" class = "calc_button operador" onclick="salida(value)">√</button>
+           <button value = "^" class = "calc_button operador" onclick="salida(value)">xⁿ</button> 
+           <button class = "calc_button operador" onclick="unoEntre()">1/x</button>
+       </div>
+        <div class = "calc_fila" style="background-color: rgb(2, 53, 75);">
+            <button class = "calc_button historial" onclick="buttonUp()">▲</button>
+            <button class="calc_button historial" onclick="buttonDown()">▼</button>
+            <button class = "calc_button especial" onclick="allClear()">AC</button>
+            <button class = "calc_button especial" onclick="eliminar()">←</button>
+            
+       </div>
+        <div class = "calc_fila" style="background-color: rgb(3, 65, 90);">
+            <button class = "calc_button especial" onclick="limpiar()">C</button>
+            <button class = "calc_button parent" onclick="parentIzq()">(</button>
+            <button class = "calc_button parent" onclick="parentDerch()">)</button>
+            <button value = "/" class = "calc_button operador" onclick="salida(value)">÷</button>
+        </div>
+        <div class = "calc_fila" style="background-color: rgb(4, 60, 82);">
+           <button value = "7" class = "calc_button numerico" onclick="salida(value)">7</button>
+           <button value = "8" class = "calc_button numerico" onclick="salida(value)">8</button>
+           <button value = "9" class = "calc_button numerico" onclick="salida(value)">9</button>
+           <button value = "*" class = "calc_button operador" onclick="salida(value)">x</button>
+        </div>
+        <div class = "calc_fila" style="background-color: rgb(1, 60, 83);">
+           <button value = "4" class = "calc_button numerico" onclick="salida(value)">4</button>
+           <button value = "5" class = "calc_button numerico" onclick="salida(value)">5</button>
+           <button value = "6" class = "calc_button numerico" onclick="salida(value)">6</button>
+           <button value = "-" class = "calc_button operador" onclick="salida(value)">-</button>
+        </div> 
+        <div class = "calc_fila" style="background-color: rgb(1, 60, 83);">
+           <button value = "1" class = "calc_button numerico" onclick="salida(value)">1</button>
+           <button value = "2" class = "calc_button numerico" onclick="salida(value)">2</button>
+           <button value = "3" class = "calc_button numerico" onclick="salida(value)">3</button>
+           <button value = "+" class = "calc_button operador" onclick="salida(value)">+</button>
+        </div>
+        <div class = "calc_fila_final" style = "background-color: rgb(5, 54, 77);padding-bottom: 10px;border-radius: 0px 0px 30px 30px;">
+           <button class = "calc_button especial"  onclick="cambioSig()">±</button>
+           <button value = "0" class = "calc_button numerico" onclick="salida(value)">0</button>
+           <button value = "." class = "calc_button numerico" onclick="salida(value)">.</button>
+           <button id = "bt_igual" class = "calc_button operador" onclick="calculo()">=</button>
+        </div>
+        
+      </div>
+
+   </div>
+</body>
+</html>
